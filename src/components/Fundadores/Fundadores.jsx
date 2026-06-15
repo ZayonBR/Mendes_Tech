@@ -83,7 +83,7 @@ export default function Fundadores() {
               </div>
               <div className={s.cred}>
                 <CheckCircle2 size={16} strokeWidth={1.5} className={s.credIcon} aria-hidden="true" />
-                <div><strong>Zayon</strong> Engenheiro de Software e Tech Lead. Responsável por toda a infraestrutura tecnológica, desenvolvendo desde sites de alta conversão até a programação avançada das automações de IA.</div>
+                <div><strong>Zayon</strong> Desenvolvedor Web e Especialista em Automação. Graduando em Sistemas de Informação, é responsável pelo desenvolvimento web, integração de automações de IA e toda a infraestrutura técnica descrita no site.</div>
               </div>
             </div>
 
