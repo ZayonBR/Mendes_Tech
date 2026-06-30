@@ -39,15 +39,12 @@
 }
 
 .bgCorner::before {
-  content: '';
-  position: absolute;
-  top: 48px;
-  right: 48px;
-  width: 200px;
-  height: 200px;
-  border-top: 1.5px solid rgba(14, 165, 233, 0.45);
-  border-right: 1.5px solid rgba(14, 165, 233, 0.45);
-  border-radius: 0 16px 0 0;
+ position: relative;
+  z-index: 1;
+  /* Espaçamento dinâmico para a Navbar fixa */
+  padding-top: 120px; 
+  padding-bottom: 80px;
+  max-width: 900px;
 }
 
 .bgCorner::after {
@@ -327,6 +324,7 @@
 
 /* Responsive */
 @media (max-width: 640px) {
+  .content { padding-top: 140px; }
 
   /* 1. CORREÇÃO DA NAVBAR (MOBILE): Muito mais espaço no topo para fugir da barra */
   .content {

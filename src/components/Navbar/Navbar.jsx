@@ -15,12 +15,22 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40)
+    const handler = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handler, { passive: true })
+    handler() // Check initial scroll position
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
-  const handleLinkClick = () => setOpen(false)
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
 
   const smoothScroll = (e, href) => {
     e.preventDefault()
@@ -33,9 +43,9 @@ export default function Navbar() {
   }
 
   return (
-    <header className={s.header} id="navbar" role="banner">
+    <header className={`${s.header} ${scrolled ? s.headerScrolled : ''}`} id="navbar" role="banner">
       <nav
-        className={`${s.navbar} ${scrolled ? s.scrolled : ''}`}
+        className={`${s.navbar} ${scrolled ? s.scrolled : ''} ${open ? s.navbarOpen : ''}`}
         aria-label="Navegação principal"
       >
         <div className={s.inner}>
@@ -68,7 +78,9 @@ export default function Navbar() {
             aria-label={open ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={open}
           >
-            <span /><span /><span />
+            <span className={s.lineTop} />
+            <span className={s.lineMiddle} />
+            <span className={s.lineBottom} />
           </button>
         </div>
 
@@ -77,29 +89,38 @@ export default function Navbar() {
           {open && (
             <motion.div
               className={s.mobileMenu}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               role="dialog"
               aria-label="Menu mobile"
             >
-              {links.map((l, i) => (
+              <div className={s.mobileMenuInner}>
+                {links.map((l, i) => (
+                  <motion.a
+                    key={l.href}
+                    href={l.href}
+                    className={s.mobileLink}
+                    onClick={e => smoothScroll(e, l.href)}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.04 + 0.1, duration: 0.3, ease: 'easeOut' }}
+                  >
+                    {l.label}
+                  </motion.a>
+                ))}
                 <motion.a
-                  key={l.href}
-                  href={l.href}
-                  className={s.mobileLink}
-                  onClick={e => smoothScroll(e, l.href)}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04, duration: 0.2 }}
+                  href="#cta"
+                  className={s.mobileCta}
+                  onClick={e => smoothScroll(e, '#cta')}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: links.length * 0.04 + 0.1, duration: 0.3 }}
                 >
-                  {l.label}
+                  Análise Gratuita →
                 </motion.a>
-              ))}
-              <a href="#cta" className={s.mobileCta} onClick={e => smoothScroll(e, '#cta')}>
-                Análise Gratuita →
-              </a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
