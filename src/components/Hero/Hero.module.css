@@ -13,6 +13,7 @@
   inset: 0;
   z-index: 0;
 }
+
 .bgImg {
   width: 100%;
   height: 100%;
@@ -20,6 +21,7 @@
   object-position: center;
   opacity: 0.28;
 }
+
 .bgOverlay {
   position: absolute;
   inset: 0;
@@ -35,6 +37,7 @@
   height: 320px;
   pointer-events: none;
 }
+
 .bgCorner::before {
   content: '';
   position: absolute;
@@ -46,6 +49,7 @@
   border-right: 1.5px solid rgba(14, 165, 233, 0.45);
   border-radius: 0 16px 0 0;
 }
+
 .bgCorner::after {
   content: '';
   position: absolute;
@@ -58,12 +62,12 @@
   border-radius: 0 10px 0 0;
 }
 
-
 /* ── Content ── */
 .content {
   position: relative;
   z-index: 1;
-  padding-top: 100px;
+  /* 1. CORREÇÃO DA NAVBAR: Aumentando o padding-top base (Desktop) */
+  padding-top: 160px;
   padding-bottom: 80px;
   max-width: 900px;
 }
@@ -77,23 +81,41 @@
   font-size: 12px;
   color: var(--blue);
   background: var(--blue-light);
-  border: 1px solid rgba(2,132,199,0.22);
+  border: 1px solid rgba(2, 132, 199, 0.22);
   padding: 6px 14px;
   border-radius: var(--r-full);
   margin-bottom: 28px;
 }
+
 .badgePulse {
-  width: 7px; height: 7px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--cyan);
   animation: pulseBadge 1.8s ease-in-out infinite;
 }
+
 @keyframes pulseBadge {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(6,182,212,0.5); }
-  50% { opacity: 0.75; box-shadow: 0 0 0 7px rgba(6,182,212,0); }
+
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.5);
+  }
+
+  50% {
+    opacity: 0.75;
+    box-shadow: 0 0 0 7px rgba(6, 182, 212, 0);
+  }
 }
-.badgeSep { color: var(--slate-400); }
-.badgeMono { letter-spacing: 0.06em; }
+
+.badgeSep {
+  color: var(--slate-400);
+}
+
+.badgeMono {
+  letter-spacing: 0.06em;
+}
 
 /* H1 */
 .h1 {
@@ -102,6 +124,7 @@
   gap: 4px;
   margin-bottom: 28px;
 }
+
 .h1Sans {
   font-family: var(--font-sans);
   font-size: clamp(36px, 5.5vw, 68px);
@@ -110,10 +133,12 @@
   letter-spacing: -0.025em;
   color: var(--navy);
 }
+
 .h1Serif {
   font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 600;
+  /* 2. CORREÇÃO DO TÍTULO: Mais escuro (sombra) e mais grosso (800) */
+  font-weight: 800;
   font-size: clamp(34px, 5.2vw, 64px);
   line-height: 1.08;
   background: linear-gradient(135deg, var(--blue) 0%, var(--cyan) 100%);
@@ -122,10 +147,19 @@
   background-clip: text;
   background-size: 200% 200%;
   animation: gradientShift 4s ease infinite;
+  filter: drop-shadow(0 2px 2px rgba(2, 132, 199, 0.15));
 }
+
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Subtitle */
@@ -136,7 +170,10 @@
   max-width: 620px;
   margin-bottom: 40px;
 }
-.sub strong { color: var(--navy); }
+
+.sub strong {
+  color: var(--navy);
+}
 
 /* CTAs */
 .ctas {
@@ -146,6 +183,7 @@
   flex-wrap: wrap;
   margin-bottom: 56px;
 }
+
 .btnPrimary {
   display: inline-flex;
   align-items: center;
@@ -160,10 +198,12 @@
   box-shadow: var(--shadow-blue);
   transition: transform 0.2s var(--ease-spring), box-shadow 0.2s;
 }
+
 .btnPrimary:hover {
   transform: scale(1.04) translateY(-2px);
-  box-shadow: 0 12px 40px rgba(2,132,199,0.35);
+  box-shadow: 0 12px 40px rgba(2, 132, 199, 0.35);
 }
+
 .btnGhost {
   display: inline-flex;
   align-items: center;
@@ -176,7 +216,11 @@
   border: 1.5px solid var(--slate-200);
   transition: border-color 0.2s, background 0.2s;
 }
-.btnGhost:hover { border-color: var(--blue); background: var(--blue-light); }
+
+.btnGhost:hover {
+  border-color: var(--blue);
+  background: var(--blue-light);
+}
 
 /* Metrics */
 .metrics {
@@ -190,6 +234,7 @@
   width: fit-content;
   overflow: hidden;
 }
+
 .metricItem {
   display: flex;
   align-items: center;
@@ -199,28 +244,34 @@
   align-items: flex-start;
   position: relative;
 }
+
 .metricNum {
   font-family: var(--font-mono);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--blue);
   line-height: 1;
   margin-bottom: 3px;
 }
+
 .metricLabel {
-  font-size: 12px;
-  color: var(--slate-400);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-700);
   white-space: nowrap;
   margin-bottom: 4px;
 }
+
 .metricCaption {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--slate-300);
-  line-height: 1.4;
-  max-width: 160px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 1.5;
+  max-width: 170px;
   white-space: normal;
 }
+
 .metricSep {
   position: absolute;
   right: 0;
@@ -241,21 +292,32 @@
   align-items: center;
   gap: 8px;
 }
+
 .scrollTrack {
-  width: 1px; height: 48px;
+  width: 1px;
+  height: 48px;
   background: var(--slate-200);
   border-radius: 1px;
   overflow: hidden;
 }
+
 .scrollFill {
-  width: 100%; height: 40%;
+  width: 100%;
+  height: 40%;
   background: linear-gradient(var(--blue), var(--cyan));
   animation: scrollBounce 2s ease-in-out infinite;
 }
+
 @keyframes scrollBounce {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(300%); }
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(300%);
+  }
 }
+
 .scrollLabel {
   font-family: var(--font-mono);
   font-size: 10px;
@@ -265,14 +327,33 @@
 
 /* Responsive */
 @media (max-width: 640px) {
-  .content { padding-top: 90px; }
-  .ctas { flex-direction: column; align-items: flex-start; }
+
+  /* 1. CORREÇÃO DA NAVBAR (MOBILE): Muito mais espaço no topo para fugir da barra */
+  .content {
+    padding-top: 140px;
+  }
+
+  .ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .metrics {
     flex-direction: column;
     width: 100%;
     max-width: 320px;
   }
-  .metricSep { display: none; }
-  .metricItem { border-bottom: 1px solid var(--slate-200); width: 100%; }
-  .metricItem:last-child { border-bottom: none; }
+
+  .metricSep {
+    display: none;
+  }
+
+  .metricItem {
+    border-bottom: 1px solid var(--slate-200);
+    width: 100%;
+  }
+
+  .metricItem:last-child {
+    border-bottom: none;
+  }
 }
