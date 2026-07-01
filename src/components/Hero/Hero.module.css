@@ -324,11 +324,15 @@
 
 /* Responsive */
 @media (max-width: 640px) {
-  .content { padding-top: 140px; }
+  .hero {
+    align-items: flex-start; /* Impede que o conteúdo seja "puxado" para cima (por baixo da navbar) em telas pequenas/com muito texto */
+  }
 
-  /* 1. CORREÇÃO DA NAVBAR (MOBILE): Muito mais espaço no topo para fugir da barra */
   .content {
-    padding-top: 140px;
+    padding-top: 150px; /* Garante espaço absoluto no topo para a navbar */
+    padding-bottom: 60px;
+    margin-top: auto;
+    margin-bottom: auto; /* Centralização "segura" (se houver espaço extra) */
   }
 
   .ctas {
