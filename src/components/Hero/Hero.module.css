@@ -331,8 +331,8 @@
   .content {
     padding-top: 240px; /* Garante espaço absoluto no topo para a navbar */
     padding-bottom: 60px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .ctas {
