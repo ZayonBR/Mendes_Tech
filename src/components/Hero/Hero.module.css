@@ -325,14 +325,14 @@
 /* Responsive */
 @media (max-width: 640px) {
   .hero {
-    align-items: flex-start; /* Impede que o conteúdo seja "puxado" para cima (por baixo da navbar) em telas pequenas/com muito texto */
+    align-items: flex-start; /* Impede que o conteúdo seja "puxado" para cima */
   }
 
   .content {
-    padding-top: 150px; /* Garante espaço absoluto no topo para a navbar */
+    padding-top: 240px; /* Garante espaço absoluto no topo para a navbar */
     padding-bottom: 60px;
     margin-top: auto;
-    margin-bottom: auto; /* Centralização "segura" (se houver espaço extra) */
+    margin-bottom: auto;
   }
 
   .ctas {
