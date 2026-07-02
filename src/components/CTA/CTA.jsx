@@ -30,9 +30,11 @@ export default function CTA() {
 
           <p className={s.sub}>Se você acredita que sua empresa pode transmitir na internet a qualidade que entrega todos os dias, gostaríamos de conhecer sua história.</p>
 
-          <a href={WA_GOOGLE} target="_blank" rel="noopener noreferrer" className={s.btnOutline} style={{ display: 'inline-flex', marginTop: '20px' }}>
-            Agendar Diagnóstico CONECTA →
-          </a>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '32px' }}>
+            <a href={WA_GOOGLE} target="_blank" rel="noopener noreferrer" className={s.btnOutline}>
+              Agendar Diagnóstico CONECTA →
+            </a>
+          </div>
 
           <p className={s.disclaimer}>
             🔒 Seus dados estão seguros. Não enviamos spam. Política de privacidade transparente.
