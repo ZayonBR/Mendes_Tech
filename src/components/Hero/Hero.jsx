@@ -31,7 +31,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            Seu negócio perde clientes
+            Sua empresa transmite na internet
           </motion.span>
           <motion.span
             className={s.h1Serif}
@@ -39,7 +39,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            toda vez que demora a responder.
+            a mesma qualidade que entrega aos seus clientes?
           </motion.span>
         </h1>
 
@@ -50,9 +50,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6, ease: 'easeOut' }}
         >
-          A <strong>Mendes Tech</strong> implanta agentes de IA que atendem no WhatsApp e Instagram
-          instantaneamente — e constrói sites que convertem visitantes em clientes.
-          Para clínicas, comércios e profissionais liberais.
+          A <strong>CONECTA</strong> é uma metodologia criada para ajudar empresas prestadoras de serviços a organizarem sua estrutura digital, fortalecerem sua credibilidade e evoluírem continuamente através da tecnologia, sem perder o relacionamento humano.
         </motion.p>
 
         {/* CTAs */}
@@ -63,14 +61,14 @@ export default function Hero() {
           transition={{ delay: 0.75, duration: 0.5, ease: 'easeOut' }}
         >
           <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={s.btnPrimary} id="hero-cta-primary">
-            <span>Quero minha análise gratuita</span>
+            <span>Agendar um Diagnóstico CONECTA</span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
               <path d="M3.75 9h10.5M9 3.75L14.25 9 9 14.25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
           <a href="#solucoes" className={s.btnGhost} id="hero-cta-ghost"
             onClick={e => { e.preventDefault(); document.querySelector('#solucoes')?.scrollIntoView({ behavior: 'smooth' }) }}>
-            Como funciona em 4 etapas
+            Conheça o Método CONECTA
           </a>
         </motion.div>
 

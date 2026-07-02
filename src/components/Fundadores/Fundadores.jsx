@@ -23,8 +23,8 @@ export default function Fundadores() {
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}
         >
-          A dupla que une <em>tecnologia</em><br />
-          com <em>resultado de verdade.</em>
+          A união da <em>inteligência comercial</em><br />
+          com a <em>tecnologia avançada.</em>
         </motion.h2>
 
         {/* Frase de missão */}
@@ -33,7 +33,7 @@ export default function Fundadores() {
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Somos uma empresa local que acredita que tecnologia de ponta não é privilégio de grandes negócios.
+          Somos uma Consultoria Especializada em reestruturar a presença digital e otimizar o atendimento de negócios locais.
         </motion.p>
 
         <motion.div
@@ -72,7 +72,7 @@ export default function Fundadores() {
             </div>
 
             <blockquote className={s.quote}>
-              <p>"Criamos a Mendes Tech porque vimos empresas excelentes perdendo clientes todos os dias por problemas simples de tecnologia e atendimento digital. Nossa missão é colocar ferramentas de IA de alto nível ao alcance de quem mais precisa — o empresário local."</p>
+              <p>"A Mendes Tech nasceu da união entre anos de experiência em gestão e atendimento, com o desenvolvimento avançado de IA. Percebemos que tecnologia, sozinha, não resolve problemas. Ela precisa estar a serviço da estratégia. Foi assim que surgiu a metodologia CONECTA."</p>
               <footer>— Eduardo &amp; Zayon, fundadores</footer>
             </blockquote>
 

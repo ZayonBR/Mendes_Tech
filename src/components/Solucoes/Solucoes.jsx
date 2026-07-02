@@ -7,71 +7,84 @@ const WA_LINK = 'https://wa.me/554891443698?text=Olá!%20Quero%20saber%20mais%20
 
 const tabs = [
   {
-    id: 'ia',
-    label: 'IA WhatsApp / Instagram',
-    Icon: Bot,
-    tag: 'Automação de IA',
-    title: 'Agente de IA que atende, qualifica e agenda — 24/7',
-    desc: 'Um agente treinado com as informações do seu negócio que responde, qualifica leads, agenda consultas e encaminha clientes automaticamente — sem parar, sem errar.',
-    ctaLabel: 'Quero meu agente de IA →',
+    id: 'diagnostico',
+    label: '1. Diagnóstico',
+    Icon: MapPin,
+    tag: 'Fase 1: Mapeamento de Cenário',
+    title: 'Conhecemos sua realidade, processos e comunicação.',
+    desc: 'Antes de oferecer qualquer ferramenta, fazemos uma auditoria completa na sua presença digital. Avaliamos a velocidade do seu site, seu posicionamento local e como a sua equipe lida com as mensagens.',
+    ctaLabel: 'Quero meu diagnóstico →',
     features: [
-      'Resposta imediata em menos de 3 segundos',
-      'Qualificação automática de leads por interesse',
-      'Agendamento integrado à sua agenda ou sistema',
-      'Transferência humanizada quando necessário',
-      'Relatório semanal de atendimentos e conversões',
-    ],
-    chat: [
-      { side: 'bot', text: 'Olá! Seja bem-vindo(a) 👋 Como posso te ajudar hoje?', time: '22:47' },
-      { side: 'user', text: 'Quero agendar uma consulta', time: '22:48' },
-      { side: 'bot', text: 'Ótimo! Temos horários na quinta às 14h ou sexta às 10h. Qual prefere? ✅', time: '22:48' },
-      { side: 'user', text: 'Quinta às 14h!', time: '22:49' },
-      { side: 'bot', text: 'Perfeito! Consulta agendada para quinta-feira às 14h. Confirmação enviada! 🎉', time: '22:49' },
-    ],
-  },
-  {
-    id: 'web',
-    label: 'Sites & Landing Pages',
-    Icon: Globe,
-    tag: 'Desenvolvimento Web',
-    title: 'Sites que convertem visitantes em clientes',
-    desc: 'Não fazemos sites "para ter". Fazemos páginas estratégicas, rápidas e com copy voltada para transformar visitantes em clientes — integradas ao robô de IA.',
-    ctaLabel: 'Quero meu site que converte →',
-    features: [
-      'Carregamento em menos de 2 segundos no celular',
-      'Design profissional que transmite credibilidade',
-      'Copywriting focado no perfil de cliente ideal',
-      'Botão de WhatsApp integrado ao agente de IA',
-      'Pixel de conversão para mensurar resultado real',
+      'Auditoria de SEO e Posicionamento no Google',
+      'Análise de tempo e qualidade de resposta no WhatsApp',
+      'Revisão de design e conversão do site',
+      'Mapeamento da Jornada do Cliente',
     ],
     table: [
-      { col: 'Velocidade', bad: '4–8 segundos', good: '<2 segundos' },
-      { col: 'Copywriting', bad: 'Genérico', good: 'Focado em conversão' },
-      { col: 'WhatsApp', bad: 'Botão simples', good: 'Integrado ao robô de IA' },
-      { col: 'SEO Local', bad: 'Não configurado', good: 'Otimizado para sua cidade' },
-      { col: 'Resultado', bad: 'Visitas sem conversão', good: 'Leads no WhatsApp' },
+      { col: 'Abordagem', bad: 'Vender pacote pronto', good: 'Diagnóstico profundo' },
+      { col: 'Foco', bad: 'Tecnologia pela tecnologia', good: 'Resolver gargalos' },
+      { col: 'Visão', bad: 'Isolada (só site ou só bot)', good: 'Jornada Integrada' },
     ],
   },
   {
-    id: 'google',
-    label: 'Google Meu Negócio',
-    Icon: MapPin,
-    tag: 'Visibilidade Local',
-    title: 'Posicionamento Estratégico nas Buscas da Sua Região',
-    desc: 'Aplicamos técnicas avançadas de SEO Local para destacar o perfil da sua empresa. Nosso objetivo é garantir que você seja encontrado facilmente por clientes que estão prontos para comprar na sua cidade.',
-    ctaLabel: 'Quero aparecer no Google →',
+    id: 'planejamento',
+    label: '2. Planejamento',
+    Icon: Globe,
+    tag: 'Fase 2: Estratégia Sob Medida',
+    title: 'Definimos prioridades. Nem toda empresa precisa da mesma solução.',
+    desc: 'Com o diagnóstico em mãos, desenhamos o plano exato. Se você precisa atrair mais pessoas, focamos em SEO e Google. Se você atrai muito mas não fecha, organizamos o WhatsApp.',
+    ctaLabel: 'Ver planejamento estratégico →',
     features: [
-      'Auditoria e otimização completa do perfil',
-      'Estratégia de captação contínua de avaliações reais',
-      'Configuração avançada de atributos, fotos e categorias',
-      'Monitoramento de performance e análise de concorrentes',
+      'Definição de canais de atração primários',
+      'Estruturação do fluxo de vendas ideal',
+      'Priorização de investimentos digitais',
+      'Sem pacotes genéricos, 100% customizado',
     ],
     ranking: [
-      { pos: '1º', name: 'Sua Empresa (Cenário Alvo)', stars: 5, reviews: '127 avaliações', isYou: true },
-      { pos: '2º', name: 'Concorrente A', stars: 3, reviews: '14 avaliações', isYou: false },
-      { pos: '3º', name: 'Concorrente B', stars: 2, reviews: '7 avaliações', isYou: false },
+      { pos: '1º', name: 'Sua Estratégia Digital (Focada)', stars: 5, reviews: 'Crescimento Contínuo', isYou: true },
+      { pos: '2º', name: 'Atirar para todos os lados', stars: 2, reviews: 'Gasto de energia', isYou: false },
     ],
-},
+  },
+  {
+    id: 'estrutura',
+    label: '3. Estrutura Digital',
+    Icon: Globe,
+    tag: 'Fase 3: Construção da Base',
+    title: 'Organizamos todos os ativos (Google, Site, SEO).',
+    desc: 'Construímos ou refatoramos os seus pontos de contato. Seu site não será apenas um cartão de visitas, mas uma máquina de persuasão. Seu Google dominará a região.',
+    ctaLabel: 'Organizar minha estrutura →',
+    features: [
+      'Sites focados em conversão e velocidade',
+      'Otimização avançada de Google Meu Negócio',
+      'Organização de catálogo e serviços no WhatsApp',
+      'Copywriting voltado para credibilidade',
+    ],
+    table: [
+      { col: 'Credibilidade', bad: 'Amadora', good: 'Profissional' },
+      { col: 'Velocidade Web', bad: '> 5 segundos', good: '< 2 segundos' },
+      { col: 'Google', bad: 'Invisível', good: 'Dominante Local' },
+    ],
+  },
+  {
+    id: 'atendimento',
+    label: '4. Atendimento Inteligente',
+    Icon: Bot,
+    tag: 'Fase 4: Automação e IA',
+    title: 'Padronizamos informações e reduzimos dúvidas repetitivas.',
+    desc: 'Aqui a tecnologia entra como protagonista para escalar o seu negócio. Implementamos agentes de inteligência artificial que qualificam, agendam e atendem 24/7 sem perder o tom humano.',
+    ctaLabel: 'Quero escalar meu atendimento →',
+    features: [
+      'Implantação de Agentes de IA no WhatsApp',
+      'Qualificação e triagem autônoma de leads',
+      'Agendamento automático sincronizado',
+      'Relatórios de taxa de conversão',
+    ],
+    chat: [
+      { side: 'bot', text: 'Olá! Sou a assistente inteligente. Notei que você procura por nossos serviços. Como posso ajudar? 👋', time: '14:00' },
+      { side: 'user', text: 'Quero saber se atendem na minha região.', time: '14:02' },
+      { side: 'bot', text: 'Sim! Atendemos toda a sua região com excelência garantida. Quer agendar uma call rápida para os detalhes? ✅', time: '14:02' },
+    ],
+  },
 ]
 
 export default function Solucoes() {
@@ -87,7 +100,7 @@ export default function Solucoes() {
           viewport={{ once: true }} transition={{ duration: 0.4 }}
         >
           <span className={s.dot} aria-hidden="true" />
-          O que a Mendes Tech entrega
+          O Método CONECTA
         </motion.div>
 
         <motion.h2
@@ -95,8 +108,8 @@ export default function Solucoes() {
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}
         >
-          Três frentes que trabalham juntas<br />
-          <em>nos bastidores do seu negócio.</em>
+          Não começamos falando sobre tecnologia.<br />
+          <em>Começamos entendendo sua empresa.</em>
         </motion.h2>
 
         {/* Tab navigation */}

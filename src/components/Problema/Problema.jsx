@@ -1,36 +1,43 @@
 import { useRef } from 'react'
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
-import { MessageCircle, Camera, Globe, Search, TrendingDown } from 'lucide-react'
+import { MessageCircle, Star, Globe, Search, CheckCircle, TrendingDown } from 'lucide-react'
 import s from './Problema.module.css'
 
 const pains = [
   {
-    id: 'pain-whatsapp',
-    Icon: MessageCircle,
-    title: 'WhatsApp sem resposta = venda perdida',
-    body: 'O lead chega interessado às 22h. A equipe responde às 9h do dia seguinte. Ele já comprou do concorrente.',
-    quote: '"Mandei mensagem e não obtive retorno..." — cliente perdido',
+    id: 'pain-google',
+    Icon: Search,
+    title: '1. Busca no Google',
+    body: 'O primeiro lugar onde procuram pelo seu serviço. Se você não aparece ou seu perfil não transmite profissionalismo, a jornada acaba aqui.',
+    quote: '"Pesquisei e não encontrei referências." — cliente perdido',
   },
   {
-    id: 'pain-instagram',
-    Icon: Camera,
-    title: 'DMs do Instagram acumulando sem resposta',
-    body: 'Cada mensagem não respondida no Instagram é um cliente que você investiu dinheiro para atrair e deixou esfriar.',
-    quote: '"Tentei contato pelo Instagram mas nunca responderam..." — lead perdido',
+    id: 'pain-reviews',
+    Icon: Star,
+    title: '2. Avaliações e Reputação',
+    body: 'O cliente encontrou você, mas vai comparar com o concorrente. O que os outros dizem sobre você determina se ele avança para o próximo passo.',
+    quote: '"O concorrente tinha mais avaliações positivas." — lead que esfriou',
   },
   {
     id: 'pain-site',
     Icon: Globe,
-    title: 'Site amador que passa desconfiança',
-    body: 'Um site lento, genérico ou desatualizado faz o visitante duvidar da profissionalidade antes mesmo de ler o conteúdo.',
-    quote: '"O site não parecia profissional, fui buscar outra empresa." — cliente nunca conquistado',
+    title: '3. Website e Credibilidade',
+    body: 'A vitrine oficial. Se o site é lento ou amador, toda a autoridade que você construiu no mundo real desaparece em segundos.',
+    quote: '"O site não passou confiança." — cliente inseguro',
   },
   {
-    id: 'pain-google',
-    Icon: Search,
-    title: 'Invisível no Google da sua cidade',
-    body: 'Seu concorrente aparece primeiro no Maps. Não porque é melhor — mas porque tem perfil e site otimizados.',
-    quote: '"Pesquisei no Google e encontrei outro mais fácil." — cliente do concorrente',
+    id: 'pain-whatsapp',
+    Icon: MessageCircle,
+    title: '4. Contato via WhatsApp',
+    body: 'O momento crítico. A demora ou a desorganização no atendimento esfriam o interesse instantaneamente.',
+    quote: '"Demoraram muito para responder, fechei com outro." — venda perdida',
+  },
+  {
+    id: 'pain-decisao',
+    Icon: CheckCircle,
+    title: '5. A Decisão Final',
+    body: 'O fechamento só acontece quando todas as etapas anteriores funcionaram perfeitamente e transmitiram segurança absoluta.',
+    quote: '"Cada etapa influencia a próxima." — O Método CONECTA',
   },
 ]
 
@@ -86,7 +93,7 @@ export default function Problema() {
           transition={{ duration: 0.4 }}
         >
           <span className={s.dot} aria-hidden="true" />
-          O cenário que sua empresa vive agora
+          A raiz do problema
         </motion.div>
 
         <motion.h2
@@ -97,8 +104,7 @@ export default function Problema() {
           viewport={{ once: true }}
           transition={{ duration: 0.55, delay: 0.05 }}
         >
-          Você está <em>pagando para trazer clientes</em>
-          <br />e os perdendo na hora que eles chegam.
+          Por que existimos?
         </motion.h2>
 
         <motion.p
@@ -108,7 +114,7 @@ export default function Problema() {
           viewport={{ once: true }}
           transition={{ duration: 0.45, delay: 0.1 }}
         >
-          O problema não é a qualidade do seu serviço. A questão é que o cliente atual <strong>pesquisa e compara</strong>. Se o seu perfil não transmitir credibilidade imediata ou o seu WhatsApp demorar a responder, ele agenda com a opção mais ágil da concorrência.
+          Ao longo dos anos percebemos que excelentes profissionais deixam de conquistar oportunidades porque sua presença digital não representa a qualidade do trabalho que realizam. O desafio não é apenas criar um site, mas organizar toda a estrutura digital para transmitir confiança desde o primeiro contato.
         </motion.p>
 
         <motion.div

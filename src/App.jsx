@@ -21,10 +21,10 @@ export default function App() {
       <main id="main-content">
         <Hero />
         <Credibilidade />
-        <ImportanciaSite />
         <Problema />
-        <Solucoes />
         <Metodologia />
+        <ImportanciaSite />
+        <Solucoes />
         <Fundadores />
         <CTA />
         <FAQ />

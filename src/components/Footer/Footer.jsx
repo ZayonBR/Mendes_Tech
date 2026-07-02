@@ -14,7 +14,7 @@ export default function Footer() {
             <span className={s.logoWord}>Mendes<strong>Tech</strong></span>
           </a>
 
-          <p className={s.tagline}>Automação de IA + Desenvolvimento Web para PMEs.</p>
+          <p className={s.tagline}>Acreditamos que empresas bem organizadas transmitem mais confiança, constroem melhores relacionamentos e crescem de forma mais consistente.</p>
 
           {/* NAP para SEO Local */}
           <address className={s.nap} aria-label="Informações de contato">
@@ -37,10 +37,10 @@ export default function Footer() {
 
         <nav className={s.nav} aria-label="Links do rodapé">
           <div className={s.navCol}>
-            <span className={s.navHeading}>Soluções</span>
-            <a href="#solucoes" className={s.navLink}>Agente de IA WhatsApp / Instagram</a>
-            <a href="#solucoes" className={s.navLink}>Sites e Landing Pages</a>
-            <a href="#solucoes" className={s.navLink}>Posicionamento no Google</a>
+            <span className={s.navHeading}>O Método</span>
+            <a href="#solucoes" className={s.navLink}>Diagnóstico e Planejamento</a>
+            <a href="#solucoes" className={s.navLink}>Estrutura Digital</a>
+            <a href="#solucoes" className={s.navLink}>Atendimento Inteligente</a>
           </div>
           <div className={s.navCol}>
             <span className={s.navHeading}>Empresa</span>

@@ -13,34 +13,50 @@ const steps = [
   {
     num: '01',
     Icon: Search,
-    title: 'Diagnóstico Gratuito',
-    desc: 'Analisamos seus canais digitais atuais — WhatsApp, Instagram, site, Google — e identificamos onde estão os maiores vazamentos de clientes.',
-    duration: '1 dia',
+    title: 'Google e Posicionamento Local',
+    desc: 'Analisamos como sua empresa aparece quando um cliente busca pelo seu serviço na sua região.',
+    duration: 'Auditoria 1',
     color: '#0284C7',
   },
   {
     num: '02',
     Icon: ClipboardList,
-    title: 'Planejamento Estratégico',
-    desc: 'Definimos quais automações e páginas farão mais impacto no seu faturamento. Sem pacote genérico — solução sob medida para seu negócio.',
-    duration: '2–3 dias',
+    title: 'Website e Conversão',
+    desc: 'Avaliamos a velocidade, o design e o copywriting da sua página atual (ou a falta de uma).',
+    duration: 'Auditoria 2',
     color: '#06B6D4',
   },
   {
     num: '03',
     Icon: Settings,
-    title: 'Implementação e Treinamento',
-    desc: 'Desenvolvemos o site, configuramos o agente de IA e o treinamos com o vocabulário, serviços e personalidade da sua empresa.',
-    duration: '5–10 dias úteis',
+    title: 'WhatsApp e Atendimento',
+    desc: 'Mapeamos o tempo de resposta e a eficiência da sua equipe ao receber um novo contato.',
+    duration: 'Auditoria 3',
     color: '#0EA5E9',
   },
   {
     num: '04',
     Icon: TrendingUp,
-    title: 'Entrega e Monitoramento',
-    desc: 'O sistema entra ao ar. Você acompanha resultados em dashboard simplificado e conta com suporte contínuo para ajustes e evoluções.',
-    duration: 'Contínuo',
+    title: 'SEO e Visibilidade',
+    desc: 'Verificamos o seu ranqueamento orgânico e oportunidades de palavras-chave não exploradas.',
+    duration: 'Auditoria 4',
     color: '#38BDF8',
+  },
+  {
+    num: '05',
+    Icon: Search,
+    title: 'Jornada do Cliente',
+    desc: 'Simulamos o caminho que o seu cliente percorre desde o primeiro clique até o momento do fechamento.',
+    duration: 'Auditoria 5',
+    color: '#0284C7',
+  },
+  {
+    num: '06',
+    Icon: Clock,
+    title: 'Estrutura Digital',
+    desc: 'Avaliamos como (e se) os seus canais se conectam para formar um ecossistema de vendas.',
+    duration: 'Auditoria 6',
+    color: '#06B6D4',
   },
 ]
 
@@ -78,7 +94,7 @@ export default function Metodologia() {
           viewport={{ once: true }} transition={{ duration: 0.4 }}
         >
           <span className={s.dot} aria-hidden="true" />
-          Como trabalhamos
+          Diagnóstico CONECTA
         </motion.div>
 
         <motion.h2
@@ -86,8 +102,8 @@ export default function Metodologia() {
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }}
         >
-          De zero ao robô funcionando<br />
-          <em>em 4 etapas simples.</em>
+          Antes de indicar qualquer solução,<br />
+          <em>nós analisamos sua empresa.</em>
         </motion.h2>
 
         <div className={s.timeline}>
@@ -129,9 +145,9 @@ export default function Metodologia() {
           viewport={{ once: true }} transition={{ duration: 0.6 }}
         >
           <div className={s.contrastOld}>
-            <h3 className={s.contrastTitle}>A maioria das agências…</h3>
+            <h3 className={s.contrastTitle}>Agências tradicionais…</h3>
             <ul className={s.listBad} aria-label="Problemas comuns de agências">
-              {['Entregam um site genérico e somem','Cobram caro por manutenções simples','Sem suporte pós-entrega','Automação sem estratégia de conversão','Resultado não mensurável'].map(item => (
+              {['Vendem pacotes prontos antes de entender você','Focam em curtidas e estética vazia','Constroem sites que não convertem','Deixam seu atendimento no manual','Não olham para a jornada toda'].map(item => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -140,7 +156,7 @@ export default function Metodologia() {
           <div className={s.contrastNew}>
             <h3 className={s.contrastTitle}>A Mendes Tech…</h3>
             <ul className={s.listGood} aria-label="Diferenciais da Mendes Tech">
-              {['Entrega site + agente de IA integrados','Preço justo e transparente desde o início','Suporte contínuo incluso','Robô treinado para converter, não só responder','Dashboard de resultados acessível a você'].map(item => (
+              {['Diagnóstico profundo antes de qualquer venda','Foco em conversão e resultados reais','Estrutura digital que vende 24h','Atendimento organizado e inteligente','Acompanhamento contínuo dos dados'].map(item => (
                 <li key={item}>{item}</li>
               ))}
             </ul>

@@ -1,27 +1,37 @@
 import { motion } from 'framer-motion'
-import { MonitorSmartphone, Search, ShieldCheck, Rocket } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import s from './ImportanciaSite.module.css'
 
 const benefits = [
   {
-    Icon: MonitorSmartphone,
-    title: 'Sua vitrine 24 horas por dia',
-    desc: 'Um site não fecha. Ele apresenta seus produtos, serviços e diferenciais a qualquer momento que o cliente procurar.',
+    Icon: CheckCircle,
+    title: 'Website Estratégico',
+    desc: 'Seu terreno próprio na internet, projetado para atrair, engajar e converter visitantes em clientes reais.',
   },
   {
-    Icon: ShieldCheck,
-    title: 'Autoridade e Credibilidade',
-    desc: 'Empresas com sites próprios transmitem mais confiança. É o endereço oficial do seu negócio na internet.',
+    Icon: CheckCircle,
+    title: 'Perfil no Google',
+    desc: 'Dominância nas buscas locais. Sua empresa será a primeira escolha de quem já está procurando pelo seu serviço.',
   },
   {
-    Icon: Search,
-    title: 'Descoberta no Google',
-    desc: 'Sem um site otimizado, você não aparece nas buscas. Um site bem feito atrai clientes de forma orgânica e constante.',
+    Icon: CheckCircle,
+    title: 'FAQ e Conteúdo Base',
+    desc: 'As dúvidas dos seus clientes respondidas antecipadamente, gerando confiança antes mesmo do contato.',
   },
   {
-    Icon: Rocket,
-    title: 'Base para Escala',
-    desc: 'Redes sociais mudam algoritmos, mas seu site é seu. É a base onde toda a sua estratégia de marketing deve aterrissar.',
+    Icon: CheckCircle,
+    title: 'Artigos e Materiais',
+    desc: 'Conteúdo de valor que educa o seu cliente, estabelecendo você como a principal autoridade da sua região.',
+  },
+  {
+    Icon: CheckCircle,
+    title: 'WhatsApp Organizado',
+    desc: 'Um fluxo de atendimento ágil, etiquetado e com automações que evitam que qualquer oportunidade esfrie.',
+  },
+  {
+    Icon: CheckCircle,
+    title: 'Autoridade e Reputação',
+    desc: 'O somatório de todos os pontos acima resulta na criação de uma marca forte, desejada e inquestionável.',
   },
 ]
 
@@ -38,13 +48,13 @@ export default function ImportanciaSite() {
         >
           <div className={s.eyebrow}>
             <span className={s.dot} aria-hidden="true" />
-            Por que ter um site profissional?
+            Ativos de Longo Prazo
           </div>
           <h2 className={s.h2} id="importancia-h2">
-            O centro da sua estratégia <em>digital.</em>
+            Construímos <em>Patrimônio Digital</em>
           </h2>
           <p className={s.sub}>
-            Não dependa apenas das redes sociais. Um site próprio é o seu terreno na internet.
+            Não acreditamos em soluções temporárias. Cada melhoria deve gerar valor contínuo.
           </p>
         </motion.div>
 
