@@ -17,18 +17,21 @@ export default function Footer() {
           <p className={s.tagline}>Acreditamos que empresas bem organizadas transmitem mais confiança, constroem melhores relacionamentos e crescem de forma mais consistente.</p>
 
           {/* NAP para SEO Local */}
-          <address className={s.nap} aria-label="Informações de contato">
+          <address className={s.nap} aria-label="Informações de contato (NAP)" itemScope itemType="https://schema.org/LocalBusiness">
+            <meta itemProp="name" content="Mendes Tech" />
             <div className={s.napItem}>
               <MapPin size={16} strokeWidth={1.5} className={s.napIcon} aria-hidden="true" />
-              Litoral Sul de SP · Atendimento Nacional
+              <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                <span itemProp="addressLocality">Litoral Sul de SP</span> · <span itemProp="areaServed">Atendimento Nacional</span>
+              </span>
             </div>
             <div className={s.napItem}>
               <Phone size={16} strokeWidth={1.5} className={s.napIcon} aria-hidden="true" />
-              <a href={WA} aria-label="WhatsApp da Mendes Tech">(48) 9144-3698</a>
+              <a href={WA} aria-label="WhatsApp da Mendes Tech" itemProp="telephone">(48) 9144-3698</a>
             </div>
             <div className={s.napItem}>
               <Mail size={16} strokeWidth={1.5} className={s.napIcon} aria-hidden="true" />
-              <a href="mailto:contato@mendestech.com.br">contato@mendestech.com.br</a>
+              <a href="mailto:contato@mendestech.com.br" itemProp="email">contato@mendestech.com.br</a>
             </div>
           </address>
 

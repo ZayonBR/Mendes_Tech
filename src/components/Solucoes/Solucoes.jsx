@@ -188,9 +188,7 @@ export default function Solucoes() {
                       </motion.div>
                     ))}
                   </div>
-                  <div className={s.chatFooter}>
-                    <span className={s.mono}>// atendimento 100% automático — 22:47 da noite</span>
-                  </div>
+                
                 </div>
               )}
 
