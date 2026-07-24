@@ -1,36 +1,28 @@
 import { HelmetProvider } from 'react-helmet-async'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
-import Credibilidade from './components/Credibilidade/Credibilidade'
-import Problema from './components/Problema/Problema'
-import ImportanciaSite from './components/ImportanciaSite/ImportanciaSite'
-import Solucoes from './components/Solucoes/Solucoes'
-import Metodologia from './components/Metodologia/Metodologia'
-import Fundadores from './components/Fundadores/Fundadores'
-import FAQ from './components/FAQ/FAQ'
-import CTA from './components/CTA/CTA'
 import Footer from './components/Footer/Footer'
 import WhatsAppFAB from './components/WhatsAppFAB/WhatsAppFAB'
 import SEO from './components/SEO/SEO'
+
+import LandingPage from './pages/LandingPage'
+import SolucoesVitrine from './pages/SolucoesVitrine'
+import SolucaoDetalhe from './pages/SolucaoDetalhe'
 
 export default function App() {
   return (
     <HelmetProvider>
       <SEO />
-      <Navbar />
-      <main id="main-content">
-        <Hero />
-        <Credibilidade />
-        <Problema />
-        <Metodologia />
-        <ImportanciaSite />
-        <Solucoes />
-        <Fundadores />
-        <CTA />
-        <FAQ />
-      </main>
-      <Footer />
-      <WhatsAppFAB />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/solucoes" element={<SolucoesVitrine />} />
+          <Route path="/solucoes/:id" element={<SolucaoDetalhe />} />
+        </Routes>
+        <Footer />
+        <WhatsAppFAB />
+      </BrowserRouter>
     </HelmetProvider>
   )
 }

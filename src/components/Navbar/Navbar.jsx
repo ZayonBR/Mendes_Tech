@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import s from './Navbar.module.css'
 
-const links = [
-  { href: '#problema', label: 'O Problema' },
-  { href: '#solucoes', label: 'Soluções' },
-  { href: '#metodologia', label: 'Metodologia' },
-  { href: '#fundadores', label: 'Quem Somos' },
-  { href: '#faq', label: 'FAQ' },
+const navItems = [
+  { type: 'hash', href: '#problema', label: 'O Problema' },
+  { type: 'hash', href: '#metodologia', label: 'Metodologia' },
+  { type: 'hash', href: '#solucoes', label: 'Soluções' },
+  { type: 'route', to: '/solucoes', label: 'Nossas Soluções' },
+  { type: 'hash', href: '#fundadores', label: 'Quem Somos' },
+  { type: 'hash', href: '#faq', label: 'FAQ' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20)
@@ -32,9 +36,29 @@ export default function Navbar() {
     }
   }, [open])
 
+  // Scroll to hash if navigating back to home from another page
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(location.hash)
+        if (el) {
+          const nav = document.getElementById('navbar')
+          const offset = nav ? nav.offsetHeight + 16 : 80
+          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' })
+        }
+      }, 100)
+    }
+  }, [location])
+
   const smoothScroll = (e, href) => {
     e.preventDefault()
     setOpen(false)
+    
+    if (location.pathname !== '/') {
+      navigate('/' + href)
+      return
+    }
+
     const el = document.querySelector(href)
     if (!el) return
     const nav = document.getElementById('navbar')
@@ -50,21 +74,29 @@ export default function Navbar() {
       >
         <div className={s.inner}>
           {/* Logo */}
-          <a href="#hero" className={s.logo} aria-label="Mendes Tech — início" onClick={e => smoothScroll(e, '#hero')}>
+          <Link to="/#hero" className={s.logo} aria-label="Mendes Tech — início" onClick={e => smoothScroll(e, '#hero')}>
             <div className={s.logoIconWrap} aria-hidden="true">
               <img src="/favicon.png" alt="" className={s.logoImg} />
             </div>
             <span className={s.logoWord}>Mendes<strong>Tech</strong></span>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <div className={s.desktopLinks} role="list">
-            {links.map(l => (
-              <a key={l.href} href={l.href} className={s.link} role="listitem"
-                onClick={e => smoothScroll(e, l.href)}>
-                {l.label}
-              </a>
-            ))}
+            {navItems.map((item, i) => {
+              if (item.type === 'route') {
+                return (
+                  <Link key={i} to={item.to} target="_blank" rel="noopener noreferrer" className={s.link} role="listitem">
+                    {item.label}
+                  </Link>
+                )
+              }
+              return (
+                <a key={i} href={item.href} className={s.link} role="listitem" onClick={e => smoothScroll(e, item.href)}>
+                  {item.label}
+                </a>
+              )
+            })}
           </div>
 
           <a href="#cta" className={s.navCta} onClick={e => smoothScroll(e, '#cta')}>
@@ -97,26 +129,35 @@ export default function Navbar() {
               aria-label="Menu mobile"
             >
               <div className={s.mobileMenuInner}>
-                {links.map((l, i) => (
-                  <motion.a
-                    key={l.href}
-                    href={l.href}
-                    className={s.mobileLink}
-                    onClick={e => smoothScroll(e, l.href)}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04 + 0.1, duration: 0.3, ease: 'easeOut' }}
-                  >
-                    {l.label}
-                  </motion.a>
-                ))}
+                {navItems.map((item, i) => {
+                  if (item.type === 'route') {
+                    return (
+                      <Link key={i} to={item.to} target="_blank" rel="noopener noreferrer" className={s.mobileLink}>
+                        {item.label}
+                      </Link>
+                    )
+                  }
+                  return (
+                    <motion.a
+                      key={i}
+                      href={item.href}
+                      className={s.mobileLink}
+                      onClick={e => smoothScroll(e, item.href)}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.04 + 0.1, duration: 0.3, ease: 'easeOut' }}
+                    >
+                      {item.label}
+                    </motion.a>
+                  )
+                })}
                 <motion.a
                   href="#cta"
                   className={s.mobileCta}
                   onClick={e => smoothScroll(e, '#cta')}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: links.length * 0.04 + 0.1, duration: 0.3 }}
+                  transition={{ delay: navItems.length * 0.04 + 0.1, duration: 0.3 }}
                 >
                   Análise Gratuita →
                 </motion.a>
@@ -128,3 +169,4 @@ export default function Navbar() {
     </header>
   )
 }
+
