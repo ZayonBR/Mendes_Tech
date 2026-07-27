@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion'
-import { BarChart3, Bot } from 'lucide-react'
 import s from './CTA.module.css'
-
 const WA_GOOGLE = 'https://wa.me/554891443698?text=Olá!%20Vim%20pelo%20site%20e%20quero%20a%20Análise%20Gratuita%20do%20meu%20Google%20Meu%20Negócio.'
-const WA_ROBO = 'https://wa.me/554891443698?text=Olá!%20Vim%20pelo%20site%20e%20quero%20ver%20a%20demonstração%20do%20Robô%20de%20IA%20da%20Mendes%20Tech.'
 
 export default function CTA() {
   return (

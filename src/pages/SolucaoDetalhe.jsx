@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, CheckCircle2, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react'
+import { ArrowLeft, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react'
 import { solucoesData } from '../data/solucoes'
 import s from './SolucaoDetalhe.module.css'
 
@@ -87,9 +87,13 @@ export default function SolucaoDetalhe() {
             {solucao.oProblema && (
               <div className={s.cardBox}>
                 <h2 className={s.sectionTitle}>O Problema que Resolvemos</h2>
-                <p className="text-slate-600 leading-relaxed text-base sm:text-lg">
-                  {solucao.oProblema}
-                </p>
+                <div className="flex flex-col gap-4">
+                  {solucao.oProblema.split('\n').filter(p => p.trim() !== '').map((paragraph, idx) => (
+                    <p key={idx} className="text-slate-600 leading-relaxed text-base sm:text-lg">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
             )}
 
@@ -112,11 +116,33 @@ export default function SolucaoDetalhe() {
             {solucao.abordagem && (
               <div className={s.cardBox}>
                 <h2 className={s.sectionTitle}>A Abordagem CONECTA</h2>
-                <div className="flex flex-col gap-4 text-slate-600 leading-relaxed text-base sm:text-lg mt-4">
+                <div className="flex flex-col gap-4 mt-4">
                   {Array.isArray(solucao.abordagem) ? (
-                    solucao.abordagem.map((p, i) => <p key={i}>{p}</p>)
+                    solucao.abordagem.map((p, i) => {
+                      if (typeof p === 'string') {
+                        if (p.startsWith('### ')) {
+                          return (
+                            <h3 key={i} className="text-xl sm:text-2xl font-bold text-slate-900 mt-6 mb-2 first:mt-0">
+                              {p.replace('### ', '')}
+                            </h3>
+                          )
+                        }
+                        if (p.startsWith('#### ')) {
+                          return (
+                            <h4 key={i} className="text-lg sm:text-xl font-bold text-slate-800 mt-4 mb-2 first:mt-0">
+                              {p.replace('#### ', '')}
+                            </h4>
+                          )
+                        }
+                      }
+                      return (
+                        <p key={i} className="text-slate-600 leading-relaxed text-base sm:text-lg">
+                          {p}
+                        </p>
+                      )
+                    })
                   ) : (
-                    <p>{solucao.abordagem}</p>
+                    <p className="text-slate-600 leading-relaxed text-base sm:text-lg">{solucao.abordagem}</p>
                   )}
                 </div>
               </div>
