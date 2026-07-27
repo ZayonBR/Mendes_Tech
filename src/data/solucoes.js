@@ -1,5 +1,5 @@
 import imgAutomacaoWhats from './automacao_whats.png';
-import imgCONECTA from './conecta.png';
+import imgconecta from './conecta.png';
 
 export const solucoesData = [
   {
@@ -9,7 +9,7 @@ export const solucoesData = [
     tagline: 'Mapeamento profundo',
     iconName: 'Activity',
     resumo: 'Mapeamos sua jornada atual para identificar barreiras invisíveis que estão afastando clientes antes mesmo do primeiro contato.',
-    imagemCapa: imgCONECTA,
+    imagemCapa: imgconecta,
     oProblema: `Muitos empresários acreditam que perdem clientes porque existe um concorrente com preços menores, mais tempo de mercado ou um investimento maior em publicidade. Esses fatores realmente podem influenciar. Mas existe um concorrente silencioso que costuma passar despercebido: a falta de clareza sobre como sua empresa é percebida no ambiente digital.
 Pense por um instante. Quando foi a última vez que você pesquisou sua própria empresa no Google? Quando acessou seu site pelo celular como se fosse um cliente? A maioria das empresas nunca faz esse exercício. E justamente por isso deixa de perceber oportunidades importantes de melhoria.`,
     oQueEstaIncluido: [
