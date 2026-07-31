@@ -6,10 +6,10 @@ export default function SEO() {
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://mendestech.com.br/#organization',
+        '@id': 'https://mendes-tech.vercel.app/#organization',
         name: 'Mendes Tech',
-        url: 'https://mendestech.com.br',
-        logo: 'https://mendestech.com.br/logo.png',
+        url: 'https://mendes-tech.vercel.app',
+        logo: 'https://mendes-tech.vercel.app/favicon.png',
         telephone: '+55-48-9144-3698',
         email: 'contato@mendestech.com.br',
         address: {
@@ -30,9 +30,9 @@ export default function SEO() {
       },
       {
         '@type': 'Service',
-        '@id': 'https://mendestech.com.br/#solucoes',
+        '@id': 'https://mendes-tech.vercel.app/#solucoes',
         name: 'Soluções de Automação de IA e Desenvolvimento Web — Método CONECTA',
-        provider: { '@id': 'https://mendestech.com.br/#organization' },
+        provider: { '@id': 'https://mendes-tech.vercel.app/#organization' },
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: 'Soluções Mendes Tech',
@@ -110,14 +110,13 @@ export default function SEO() {
       <title>Mendes Tech — Automação de IA e Sites para Empresas</title>
       <meta name="description" content="A Mendes Tech desenvolve sites de alta conversão e robôs de IA para atendimento 24/7 no WhatsApp. Aumente as vendas da sua empresa. Agende um diagnóstico!" />
       <meta name="keywords" content="automação whatsapp, agente IA instagram, desenvolvimento web, chatbot para clínica, robô de atendimento, Mendes Tech, litoral sul SP, peruíbe, itanhaém" />
-      <link rel="canonical" href="https://mendestech.com.br/" />
+      <link rel="canonical" href="https://mendes-tech.vercel.app/" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Mendes Tech — Automação de IA e Sites para Empresas" />
       <meta property="og:description" content="A Mendes Tech desenvolve sites de alta conversão e robôs de IA para atendimento 24/7 no WhatsApp. Aumente as vendas da sua empresa. Agende um diagnóstico!" />
-      <meta property="og:url" content="https://mendestech.com.br/" />
+      <meta property="og:url" content="https://mendes-tech.vercel.app/" />
       <meta property="og:locale" content="pt_BR" />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   )
 }
-
